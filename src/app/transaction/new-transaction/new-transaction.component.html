@@ -1,0 +1,21 @@
+<div>
+  <div>
+  <label>Source Account</label>
+  <select [(ngModel)]="transaction.sourceAccount"> 
+  
+      <option *ngFor="let a of accounts" [value]="a" >{{a.name}}</option>
+  </select>
+</div>
+<div>
+  <label>Target Account</label>
+  <select  [(ngModel)]="transaction.targetAccount" > 
+      <option *ngFor="let a of accounts" [value]="a">{{a.name}}</option>
+  </select>
+</div>
+<div>
+  <input type="text" [(ngModel)]="transaction.amount">
+</div>
+<div>
+    <button (click)="addTransaction()">Add</button>
+ </div>
+</div>

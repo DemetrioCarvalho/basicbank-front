@@ -1,0 +1,7 @@
+<h2>Users</h2>
+<ul [ngClass] = "'home'">
+  <li *ngFor="let user of users" >
+    Id: {{user.iduser}}, Name: {{user.firstname}} | 
+	<a [routerLink]="['/view-accounts', user.iduser]">View Accounts</a>
+  </li>
+</ul>

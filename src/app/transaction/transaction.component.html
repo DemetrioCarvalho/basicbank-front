@@ -1,0 +1,8 @@
+<h2>Transactions</h2>
+<ul [ngClass] = "'transaction'">
+  <li *ngFor="let transaction of transactions" >
+    Id: {{transaction.idtransaction}} | Amount: {{transaction.amount}} | 
+    Source: {{transaction.sourceAccount.user.lastname}}, {{transaction.sourceAccount.user.firstname}} |
+    Target: {{transaction.targetAccount.user.lastname}}, {{transaction.targetAccount.user.firstname}}
+  </li>
+</ul>

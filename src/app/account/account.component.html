@@ -1,0 +1,7 @@
+<h2>Accounts</h2>
+<ul [ngClass] = "'account'">
+  <li *ngFor="let account of accounts" >
+    Id: {{account.id}}, Name: {{account.name}} | 
+	<a [routerLink]="['/view-transactions', account.id]">View Transactions</a>
+  </li>
+</ul>
