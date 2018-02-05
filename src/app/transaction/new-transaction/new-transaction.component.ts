@@ -16,8 +16,8 @@ export class NewTransactionComponent implements OnInit {
   constructor(private accountService: AccountService, private transactionService: TransactionService) { }
 
   ngOnInit(): void {
-    this.transaction.targetAccount = new Account();
-    this.transaction.sourceAccount = new Account();
+    //this.transaction.targetAccount = new Account();
+    //this.transaction.sourceAccount = new Account();
 
     this.accountService
     .getAllAccounts()
@@ -28,7 +28,22 @@ export class NewTransactionComponent implements OnInit {
     );
   }
 
+  sourceAccountChanged(account: number) {
+    const newAccount: Account = this.accounts.find(acct => acct.id === +account);
+    if (newAccount) {
+      this.transaction.sourceAccount = new Account(newAccount);
+    }
+  }
+
+  targetAccountChanged(account: number) {
+    const newAccount: Account = this.accounts.find(acct => acct.id === +account);
+    if (newAccount) {
+      this.transaction.targetAccount = new Account(newAccount);
+    }
+  }
+
   addTransaction(): void {
+    console.log(this.transaction);
     this.transactionService.addTransaction(this.transaction)    
     .subscribe(
       (transaction) => {

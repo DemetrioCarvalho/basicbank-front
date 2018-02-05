@@ -28,8 +28,8 @@ export class TransactionComponent implements OnInit {
     //   }
     // );
 
-    this.route.params
-    .switchMap((params: Params) => this.transactionService.getTransactionsByAccountId(+params['accountid']))
-    .subscribe(transaction => this.transactions = transaction);
+    // this.route.params
+    // .switchMap((params: Params) => this.transactionService.getTransactionsByAccountId(+params['accountid']))
+    // .subscribe(transaction => this.transactions = transaction);
   }
 }
